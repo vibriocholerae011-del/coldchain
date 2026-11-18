@@ -1,0 +1,12 @@
+{
+  "name": "ثبت وضعیت تجهیزات زنجیره سرد",
+  "short_name": "زنجیره سرد",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "fa",
+  "background_color": "#f4f8f9",
+  "theme_color": "#0f6b7a",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

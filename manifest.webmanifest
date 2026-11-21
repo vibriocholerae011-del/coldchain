@@ -7,6 +7,6 @@
   "dir": "rtl",
   "lang": "fa",
   "background_color": "#f4f8f9",
-  "theme_color": "#0f6b7a",
+  "theme_color": "#1a8179",
   "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
 }

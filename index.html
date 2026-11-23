@@ -833,8 +833,8 @@ const FR=[['Haier HBC-80','f80','chest'],['Haier HBC-150','f150','chest'],['Haie
 const PW=['فقط شبکه برق عمومی','شبکه برق عمومی و ژنراتور','شبکه برق عمومی و پنل خورشیدی','ژنراتور (بدون شبکه برق عمومی)','سایر'],GA='متصل به مدار و فعال',GS=[GA,'متصل به مدار، آماده به کار (خاموش)','غیرمتصل به مدار','خراب','در دست تعمیر'],GR=['خرابی ژنراتور','نبود سوخت','نبود سوئیچ خودکار (ATS) یا تابلوی برق','عدم راه‌اندازی پس از نصب','نیاز به سرویس یا تعمیر','عدم تخصیص اعتبار'];
 const RS=['سالم و فعال','فعال با مشکل','خراب','در دست تعمیر','غیرفعال'],RM=['ندارد','دماسنج ساده','دیتالاگر ثبت دما','سامانه پایش و هشدار'],CPK=['شکسته یا ترک‌خورده','درب معیوب','عایق آسیب‌دیده','سایر'],CPV=['بند یا دسته معیوب','فاقد فوم‌پد','شکسته یا ترک‌خورده','درب یا دریچه معیوب','عایق آسیب‌دیده','سایر'];
 const QK='کلدباکس (Cold box): ظرف عایق بزرگ‌تر (حداکثر وزن پر ۵۰ کیلوگرم) برای انتقال واکسن بین انبارها و مراکز و نگهداری موقت، همراه یخ‌پک. بر اساس استاندارد WHO (E004) ماندگاری سرما حداقل ۴۸ ساعت (برد کوتاه) یا ۹۶ ساعت (برد بلند) است.',QV='واکسن کریر (Vaccine carrier): ظرف عایق کوچک‌تر و قابل حمل با دست یا کوله (حداکثر وزن پر ۸ کیلوگرم) برای حمل مقدار کم واکسن در جلسات واکسیناسیون و فعالیت‌های سیار، همراه یخ‌پک؛ مدت ماندگاری سرمای آن کوتاه‌تر از کلدباکس است.';
-const UK=['c','k','ut','un','st','pc','pw','gn','gm','gp','gs','gr','cr','rn','rv','rs','ry','rb','rm','rd','cb','cbm','cbp','cbo','vc','vcm','vcp','vco'];
-const UH=[['شهرستان','c'],['نوع واحد بهداشتی','ut'],['مرکز خدمات جامع سلامت','pc'],['عنوان واحد','un'],['وضعیت واحد','st'],['تعداد کلدباکس','cb','n'],['تعداد کلدباکس معیوب','cbm','n'],['مشکلات کلدباکس','cbp','a'],['توضیحات سایر مشکلات کلدباکس','cbo'],['تعداد واکسن کریر','vc','n'],['تعداد واکسن کریر معیوب','vcm','n'],['مشکلات واکسن کریر','vcp','a'],['توضیحات سایر مشکلات واکسن کریر','vco'],['منبع برق','pw'],['دارای ژنراتور','gn','b'],['مشخصات ژنراتور','gm'],['توان ژنراتور (کیلووات‌آمپر)','gp','n'],['وضعیت ژنراتور','gs'],['علت عدم اتصال یا عدم فعالیت ژنراتور','gr'],['دارای اتاق سرد','cr','b'],['تعداد اتاق سرد','rn','n'],['حجم کل اتاق سرد (متر مکعب)','rv','n'],['وضعیت اتاق سرد','rs'],['سال راه‌اندازی اتاق سرد','ry','n'],['کمپرسور پشتیبان اتاق سرد','rb'],['سامانه پایش اتاق سرد','rm'],['توضیحات اتاق سرد','rd']];
+const UK=['c','k','ut','un','st','pc','pw','gn','gm','gp','gs','gr','cr','rn','rv','rs','ry','rb','rm','rd','cb','cbm','cbp','cbo','vc','vcm','vcp','vco','icp'];
+const UH=[['شهرستان','c'],['نوع واحد بهداشتی','ut'],['مرکز خدمات جامع سلامت','pc'],['عنوان واحد','un'],['وضعیت واحد','st'],['تعداد کلدباکس','cb','n'],['تعداد کلدباکس معیوب','cbm','n'],['مشکلات کلدباکس','cbp','a'],['توضیحات سایر مشکلات کلدباکس','cbo'],['تعداد واکسن کریر','vc','n'],['تعداد واکسن کریر معیوب','vcm','n'],['مشکلات واکسن کریر','vcp','a'],['توضیحات سایر مشکلات واکسن کریر','vco'],['تعداد آیس‌پک','icp','n'],['منبع برق','pw'],['دارای ژنراتور','gn','b'],['مشخصات ژنراتور','gm'],['توان ژنراتور (کیلووات‌آمپر)','gp','n'],['وضعیت ژنراتور','gs'],['علت عدم اتصال یا عدم فعالیت ژنراتور','gr'],['دارای اتاق سرد','cr','b'],['تعداد اتاق سرد','rn','n'],['حجم کل اتاق سرد (متر مکعب)','rv','n'],['وضعیت اتاق سرد','rs'],['سال راه‌اندازی اتاق سرد','ry','n'],['کمپرسور پشتیبان اتاق سرد','rb'],['سامانه پایش اتاق سرد','rm'],['توضیحات اتاق سرد','rd']];
 const TH=[['tag','Fridge-tag','tag',1],['usb','دیتالاگر دمای Haier','usb',1],['dig','دیجیتال خود یخچال','dig',0],['lt','LogTag','lt',1],['dial','عقربه‌ای','dial',0],['hg','جیوه‌ای','hg',0],['oth','سایر','oth',1]];
 const SS=['سالم','اتمام باطری','خراب'];
 IC.fr='<path d="M24 6v36M8 15l32 18M40 15L8 33"/>';
@@ -867,10 +867,10 @@ const save_o=()=>{try{localStorage.setItem(SK(),JSON.stringify({rows:S.rows,sel:
 const cn=r=>TH.reduce((s,t)=>s+(r.tm[t[0]]||[]).length,0),tb=r=>TH.reduce((s,t)=>s+(r.tm[t[0]]||[]).filter(x=>x&&x!='سالم').length,0);
 const tmOK=r=>(r.nt||cn(r)>0)&&TH.every(t=>(r.tm[t[0]]||[]).every(x=>x))&&(!(r.tm.oth||[]).length||String(r.to).trim());
 const hasG=u=>u.ut==ZS?/ژنراتور/.test(u.pw||''):!!u.gn;
-const uok=u=>inList(u)&&u.cb!==''&&u.vc!==''&&!(u.cbm>u.cb)&&!(u.vcm>u.vc)&&cpOK(u)&&(!PS.includes(u.ut)||String(u.pc||'').trim())&&(u.ut!=ZS||(u.pw&&(!hasG(u)||(u.gs&&(u.gs==GA||String(u.gr).trim())))&&(!u.cr||(u.rn>0&&u.rv>0&&u.rs))));
+const uok=u=>inList(u)&&u.cb!==''&&u.vc!==''&&u.icp!==''&&!(u.cbm>u.cb)&&!(u.vcm>u.vc)&&cpOK(u)&&(!PS.includes(u.ut)||String(u.pc||'').trim())&&(u.ut!=ZS||(u.pw&&(!hasG(u)||(u.gs&&(u.gs==GA||String(u.gr).trim())))&&(!u.cr||(u.rn>0&&u.rv>0&&u.rs))));
 const ok=r=>uok(r)&&r.c&&r.ut&&r.un&&r.st&&r.t&&(r.t=='none'?r.nq>0:(String(r.br).trim()&&String(r.m).trim()&&r.v>0&&tmOK(r)&&frOK(r)));
 const pic=k=>IMG[k]?`<img src="${IMG[k]}" alt="">`:svg(k);
-const nr=o=>({id:uid(),g:uid(),c:S.last.c,k:'m',ut:'',un:'',st:'',pc:S.last.pc||'',t:'',br:'',m:'',lb:'',nq:'',v:'',y:'',n:'',tm:{},nt:false,to:'',pw:'',gn:false,gm:'',gp:'',gs:'',gr:'',cr:false,rn:'',rv:'',rs:'',ry:'',rb:'',rm:'',rd:'',cb:'',cbm:'',cbp:[],cbo:'',vc:'',vcm:'',vcp:[],vco:'',fs:'',...o});
+const nr=o=>({id:uid(),g:uid(),c:S.last.c,k:'m',ut:'',un:'',st:'',pc:S.last.pc||'',t:'',br:'',m:'',lb:'',nq:'',v:'',y:'',n:'',tm:{},nt:false,to:'',pw:'',gn:false,gm:'',gp:'',gs:'',gr:'',cr:false,rn:'',rv:'',rs:'',ry:'',rb:'',rm:'',rd:'',cb:'',cbm:'',cbp:[],cbo:'',vc:'',vcm:'',vcp:[],vco:'',icp:'',fs:'',...o});
 const fixR=r=>{r.pc=r.pc||'';
  if(r.ut==ZS){r.k='z';r.pc=''}
  else{const x=r.un?resU(r.c,r.ut,r.un):null;if(x){r.un=x.n;r.ut=x.t;r.pc=x.m;r.k='m'}else if(r.ut||r.k!='z')r.k='m'}
@@ -1235,7 +1235,7 @@ function secOf(a){const u=a[0],zs=u.ut==ZS,ready=!!(u.c&&u.ut),S_={};
  mk('sec-basic',bf.filter(Boolean).length,bf.length,!!inList(u));
  let fF=0,fT=0,tF=0,tT=0;a.forEach(r=>{fT++;if(r.t)fF++;if(r.t=='none'){fT++;if(r.nq>0)fF++}else if(r.t){fT+=4;if(frOK(r))fF++;if(String(r.br).trim())fF++;if(String(r.m).trim())fF++;if(r.v>0)fF++;tT++;if(tmOK(r))tF++}});
  mk('sec-fridges',fF,fT||1);mk('sec-thermo',tF,tT,tT>0||a.every(r=>r.t=='none'));
- mk('sec-carriers',(u.cb!==''?1:0)+(u.vc!==''?1:0),2,cpOK(u)&&!(u.cbm>u.cb)&&!(u.vcm>u.vc));
+ mk('sec-carriers',(u.cb!==''?1:0)+(u.vc!==''?1:0)+(u.icp!==''?1:0),3,cpOK(u)&&!(u.cbm>u.cb)&&!(u.vcm>u.vc));
  if(zs){let f=u.pw?1:0,t=1;if(hasG(u)){t+=2;if(u.gs)f++;if(u.gs&&(u.gs==GA||String(u.gr).trim()))f++}mk('sec-generator',f,t);
   if(u.cr){mk('sec-coldroom',(u.rn>0?1:0)+(u.rv>0?1:0)+(u.rs?1:0),3)}else mk('sec-coldroom',0,0)}
  else mk('sec-generator',0,0);
@@ -1289,7 +1289,7 @@ function rEd0(){const a=groups().get(S.sel);if(!a)return;const u=a[0],zs=u.ut==Z
   const tr=a.filter(r=>r.t&&r.t!='none');
   h+=secCard('sec-thermo',++n,'thermo','تجهیزات پایش دما','نوع و تعداد دماسنج‌های هر یخچال و وضعیت آن‌ها',tr.length?`<div class=stk>${a.map((r,i)=>r.t&&r.t!='none'?tcard(r,i):'').join('')}</div>`:`<div class="note">برای ثبت دماسنج‌ها ابتدا در بخش «یخچال‌ها» نوع یخچال را انتخاب نمایید.</div>`);
   const oth=(p,o,l)=>`<div id=o_${p} style="margin-top:12px;display:${(u[p]||[]).includes('سایر')?'block':'none'}"><label>توضیحات «سایر» مشکلات ${l} <i class=rq>(الزامی)</i></label><input class="${String(u[o]||'').trim()?'':'bad'}" value="${esc(u[o]||'')}" oninput="setU('${o}',this.value,this);carrUI()"></div>`;
-  h+=secCard('sec-carriers',++n,'box','کلدباکس و واکسن کریر','تجهیزات حمل و نگهداری موقت واکسن',`<div class=grid>${N('cb','تعداد کلدباکس '+Q(QK),1)}${N('cbm','تعداد کلدباکس معیوب')}</div><div style="margin-top:14px"><label>مشکلات کلدباکس <i class=rq id=rq_cbp style="display:${u.cbm>0?'inline':'none'}">(الزامی؛ چون کلدباکس معیوب دارید)</i></label><div id=w_cbp class="${u.cbm>0&&!(u.cbp||[]).length?'bad':''}">${CH('cbp',CPK)}</div>${oth('cbp','cbo','کلدباکس')}</div><div class="grid sub">${N('vc','تعداد واکسن کریر '+Q(QV),1)}${N('vcm','تعداد واکسن کریر معیوب')}</div><div style="margin-top:14px"><label>مشکلات واکسن کریر <i class=rq id=rq_vcp style="display:${u.vcm>0?'inline':'none'}">(الزامی؛ چون واکسن کریر معیوب دارید)</i></label><div id=w_vcp class="${u.vcm>0&&!(u.vcp||[]).length?'bad':''}">${CH('vcp',CPV)}</div>${oth('vcp','vco','واکسن کریر')}</div>`);
+  h+=secCard('sec-carriers',++n,'box','کلدباکس و واکسن کریر','تجهیزات حمل و نگهداری موقت واکسن',`<div class=grid>${N('cb','تعداد کلدباکس '+Q(QK),1)}${N('cbm','تعداد کلدباکس معیوب')}</div><div style="margin-top:14px"><label>مشکلات کلدباکس <i class=rq id=rq_cbp style="display:${u.cbm>0?'inline':'none'}">(الزامی؛ چون کلدباکس معیوب دارید)</i></label><div id=w_cbp class="${u.cbm>0&&!(u.cbp||[]).length?'bad':''}">${CH('cbp',CPK)}</div>${oth('cbp','cbo','کلدباکس')}</div><div class="grid sub">${N('vc','تعداد واکسن کریر '+Q(QV),1)}${N('vcm','تعداد واکسن کریر معیوب')}</div><div style="margin-top:14px"><label>مشکلات واکسن کریر <i class=rq id=rq_vcp style="display:${u.vcm>0?'inline':'none'}">(الزامی؛ چون واکسن کریر معیوب دارید)</i></label><div id=w_vcp class="${u.vcm>0&&!(u.vcp||[]).length?'bad':''}">${CH('vcp',CPV)}</div>${oth('vcp','vco','واکسن کریر')}</div><div class="grid sub">${N('icp','تعداد آیس‌پک (کلدباکس و واکسن کریر)',1)}</div>`);
   if(zs){h+=secCard('sec-generator',++n,'bolt','منبع برق و ژنراتور','منابع تأمین برق در زمان قطعی',`<div class=grid>${F('pw','منبع برق',PW)}</div>${/ژنراتور/.test(u.pw)?`<div style="margin-top:14px">${gen(1)}</div>`:''}`);
    h+=secCard('sec-coldroom',++n,'snow','مشخصات زنجیره سرد شهرستان و اتاق سرد','در صورت وجود اتاق سرد، مشخصات آن را کامل کنید',`${CK('cr','این شهرستان دارای اتاق سرد است')}${u.cr?`<div class="grid sub">${N('rn','تعداد اتاق سرد',1)}${N('rv','حجم کل (متر مکعب)',1)}${F('rs','وضعیت اتاق سرد',RS)}${N('ry','سال راه‌اندازی')}${F('rb','کمپرسور پشتیبان',['دارد','ندارد'],0)}${F('rm','سامانه پایش دما',RM,0)}${X('rd','توضیحات')}</div>`:''}`)}
   else h+=secCard('sec-generator',++n,'bolt','ژنراتور و برق جایگزین','منبع برق پشتیبان واحد',`${CK('gn','علاوه بر شبکه برق عمومی، این واحد دارای ژنراتور یا منبع برق جایگزین است')}${u.gn?`<div style="margin-top:14px">${gen(0)}</div>`:''}`);
@@ -1318,7 +1318,7 @@ function recPanels(a){const u=a[0],zs=u.ut==ZS,g=k=>{const v=u[k];return Array.i
  const s0=stOf(u),u0=URL_(),chg=s0&&s0.chg&&u0&&u0.role!='ثبت‌کننده';
  const p=[dpn('building','مشخصات واحد',kvRow('شهرستان',g('c'))+kvRow('نوع واحد',g('ut'))+(zs?'':kvRow('مرکز خدمات جامع سلامت',g('pc')))+kvRow('عنوان واحد',g('un'))+kvRow('وضعیت واحد',g('st'))),
  dpn('thermo','پایش دما',kvRow('تعداد دماسنج',fa(nT))+kvRow('دماسنج‌های معیوب / نیازمند اقدام',bT?`<span style="color:var(--bd700)">${fa(bT)}</span>`:fa(0))+kvRow('یخچال فاقد دماسنج',fa(noT))+[...byT].map(([k,n])=>kvRow(k,fa(n))).join('')),
- dpn('box','کلدباکس و واکسن کریر',kvRow('کلدباکس',fa(u.cb||0))+kvRow('کلدباکس معیوب',fa(u.cbm||0))+kvRow('مشکلات کلدباکس',g('cbp')+(u.cbo?' — '+esc(u.cbo):''))+kvRow('واکسن کریر',fa(u.vc||0))+kvRow('واکسن کریر معیوب',fa(u.vcm||0))+kvRow('مشکلات واکسن کریر',g('vcp')+(u.vco?' — '+esc(u.vco):''))),
+ dpn('box','کلدباکس و واکسن کریر',kvRow('کلدباکس',fa(u.cb||0))+kvRow('کلدباکس معیوب',fa(u.cbm||0))+kvRow('مشکلات کلدباکس',g('cbp')+(u.cbo?' — '+esc(u.cbo):''))+kvRow('واکسن کریر',fa(u.vc||0))+kvRow('واکسن کریر معیوب',fa(u.vcm||0))+kvRow('مشکلات واکسن کریر',g('vcp')+(u.vco?' — '+esc(u.vco):''))+kvRow('آیس‌پک',u.icp===''||u.icp==null?'—':fa(u.icp))),
  dpn('bolt',zs?'منبع برق و ژنراتور':'ژنراتور',(zs?kvRow('منبع برق',g('pw')):'')+kvRow('ژنراتور',zs?yn(/ژنراتور/.test(u.pw||'')):yn(u.gn))+(hasG(u)?kvRow('برند و مدل',g('gm'))+kvRow('توان (کیلووات‌آمپر)',g('gp'))+kvRow('وضعیت ژنراتور',g('gs'))+(u.gr?kvRow('علت عدم فعالیت',g('gr')):''):''))];
  if(zs)p.push(dpn('snow','اتاق سرد',kvRow('اتاق سرد',yn(u.cr))+(u.cr?kvRow('تعداد',fa(u.rn||0))+kvRow('حجم کل (متر مکعب)',fa(u.rv||0))+kvRow('وضعیت',g('rs'))+kvRow('سال راه‌اندازی',g('ry'))+kvRow('کمپرسور پشتیبان',g('rb'))+kvRow('سامانه پایش دما',g('rm'))+(u.rd?kvRow('توضیحات',g('rd')):''):'')));
  const L=a.map((r,i)=>{if(r.t=='none')return `<li class=fli><span class=fim>${svg('no')}</span><div class=fin><div class=fn1>${fa(i+1)}. بدون یخچال</div><div class=fn2>تعداد مورد نیاز: ${fa(r.nq||0)}</div></div></li>`;
@@ -1579,6 +1579,35 @@ function instCard(){if(matchMedia('(display-mode: standalone)').matches||navigat
  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
  return `<div class=card id=insc><b>نصب برنامه روی گوشی (وب‌اپ)</b><ol><li>فرم را از «لینک اصلی» با مرورگر گوشی باز کنید (نه از فایل ذخیره‌شده).</li>${ios?'<li>در Safari دکمه «اشتراک‌گذاری» را بزنید و «Add to Home Screen» (افزودن به صفحه اصلی) را انتخاب کنید.</li>':'<li>در Chrome منوی سه‌نقطه ← «Install app» یا «افزودن به صفحه اصلی» را انتخاب کنید، یا دکمه زیر را بزنید.</li>'}<li>پس از نصب، برنامه با آیکن «زنجیره سرد» و به‌صورت تمام‌صفحه باز می‌شود و همیشه آخرین نسخه را دریافت می‌کند.</li><li>برای امنیت، با بستن برنامه یا ۱۵ دقیقه عدم فعالیت، دوباره باید وارد شوید.</li></ol><button type=button class=btn id=insb onclick="doInstall()" style="display:${DIP?'':'none'};margin-top:8px">${ic('download',16)}نصب برنامه</button></div>`}
 
+/* ---- مشخصات دستگاه و آی‌پی برای سوابق ورود ---- */
+let CIP=null;
+async function fetchIp(){
+ const tryU=async(u,txt)=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),3000);try{const r=await fetch(u,{signal:c.signal,cache:'no-store'});const v=txt?await r.text():await r.json();
+   const ip=txt?((v.match(/^ip=(.+)$/m)||[])[1]||''):(v.ip||'');return /^[0-9a-fA-F:.]{3,45}$/.test(ip)?ip:''}catch(x){return''}finally{clearTimeout(t)}};
+ return await tryU('https://api64.ipify.org?format=json')||await tryU('https://www.cloudflare.com/cdn-cgi/trace',1)||await tryU('https://api.ipify.org?format=json')}
+CIP=fetchIp().then(v=>{CIP=v;return v});
+async function getIp(){if(typeof CIP=='string')return CIP;try{return await Promise.race([CIP,new Promise(z=>setTimeout(()=>z(''),2500))])||''}catch(x){return''}}
+async function devI(){
+ const ua=navigator.userAgent||'',U=navigator.userAgentData;let os='',br='',dv='';
+ const m=(re)=>(ua.match(re)||[])[1]||'';
+ if(/Android/i.test(ua))os='Android '+m(/Android ([\d.]+)/);
+ else if(/iPhone|iPad|iPod/i.test(ua))os='iOS '+m(/OS ([\d_]+)/).replace(/_/g,'.');
+ else if(/Windows NT/i.test(ua))os='Windows '+({'10.0':'10/11','6.3':'8.1','6.2':'8','6.1':'7'}[m(/Windows NT ([\d.]+)/)]||m(/Windows NT ([\d.]+)/));
+ else if(/Mac OS X/i.test(ua))os='macOS '+m(/Mac OS X ([\d_.]+)/).replace(/_/g,'.');
+ else if(/CrOS/i.test(ua))os='ChromeOS';else if(/Linux/i.test(ua))os='Linux';
+ const B=[['Edg','Edge'],['OPR','Opera'],['SamsungBrowser','Samsung Internet'],['Firefox','Firefox'],['FxiOS','Firefox'],['CriOS','Chrome'],['Chrome','Chrome'],['Version','Safari']];
+ for(const[k,n]of B){const v=m(new RegExp(k+'/([\\d.]+)'));if(v){br=n+' '+v.split('.')[0];break}}
+ const mob=/Mobi|Android.*Mobile|iPhone|iPod/i.test(ua),tab=/iPad|Tablet|Android(?!.*Mobile)/i.test(ua);dv=tab?'تبلت':mob?'موبایل':'رایانه';
+ try{if(U&&U.getHighEntropyValues){const h=await Promise.race([U.getHighEntropyValues(['model','platformVersion']),new Promise(z=>setTimeout(()=>z({}),400))]);
+   if(h.model)dv+=' ('+h.model+')';if(h.platformVersion&&/Windows/.test(os)){const pv=parseInt(h.platformVersion);os='Windows '+(pv>=13?'11':'10')}}}catch(x){}
+ if(!/\(/.test(dv)&&/Android/.test(os)){const md=m(/;\s*([^;)]+?)\s+Build/);if(md)dv+=' ('+md+')'}
+ const st=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+ return{os,br,dv,mode:st?'برنامه نصب‌شده':'مرورگر',sz:screen.width+'x'+screen.height,lang:navigator.language||'',ua:ua.slice(0,220)}}
+
+/* ---- بیدار نگه‌داشتن سرور (کاهش تأخیر اولین درخواست) ---- */
+function ping(){try{if(!document.hidden&&!ENDPOINT.startsWith('PASTE'))fetch(ENDPOINT+'?action=ping',{mode:'no-cors',cache:'no-store'}).catch(()=>{})}catch(x){}}
+setTimeout(ping,300);setInterval(()=>{if(AU)ping()},4*60000);
+
 
 initRows();if(AU&&AU.user)S.owner=AU.user.u;render();addEventListener('scroll',()=>{$('#up').style.display=scrollY>400?'flex':'none'});
 
@@ -1616,7 +1645,7 @@ async function submitAll(){
  const b=X.filter(r=>!ok(r)).length;if(b){await dlgAsk({title:'اطلاعات ناقص',text:b+' ردیف دارای اطلاعات ناقص است ('+X.filter(r=>!ok(r)).slice(0,3).map(r=>{const g=X.filter(q=>q.g==r.g);return (r.un||'بدون نام')+(g.length>1?' – یخچال '+(g.indexOf(r)+1):'')}).join('، ')+'). برای ارسال، ابتدا همه فیلدهای ضروری را تکمیل کنید.',ok:'بازگشت به فرم'});const f0=X.find(r=>!ok(r));if(f0){S.sel=f0.g;S.tab='e';render();scrollTo(0,0)}return};
  if(S.rows.some(r=>(r.un||r.m)&&!lockedU(r)&&!ok(r)))return;
  const s=await sendOnline();
- if(s=='ok'){toast('فایل اکسل نیز تهیه می‌شود.');await exp(true);resetForm()}
+ if(s=='ok'){toast('فایل اکسل نیز تهیه می‌شود.');resetForm();setTimeout(()=>{exp(true)},350)}
  else if(s=='net'&&confirm('ارسال آنلاین انجام نشد. آیا فقط فایل اکسل تهیه شود تا پس از برقراری اتصال اینترنت، مجدداً «ثبت و ارسال» را انجام دهید؟'))await exp(true)}
 
 function updUsr_o(){const b=$('#usr'),u=URL_(),v=$('#nv');if(v)v.style.display=u&&(u.role=='ناظر'||u.role=='مدیر')?'':'none';const ne=$('#ne');if(ne)ne.style.display=u&&u.role=='ناظر معاونت'?'none':'';const so=$('#so');if(so)so.style.display=u&&u.role=='ناظر معاونت'?'none':'';if(!b)return;b.style.display=u?'':'none';if(u)b.textContent=(u.name||u.u)+' ('+u.role+(u.role=='ثبت‌کننده'?'، '+u.center:u.role=='ناظر'?'، '+u.county:'')+') | خروج'}
@@ -1628,7 +1657,7 @@ function showLogin(msg){const o=lgBox();
 async function doLogin(){const u=$('#lgu').value.trim(),p=$('#lgp').value,e=$('#lge'),b=$('#lgb');
  if(!u||!p){e.textContent='نام کاربری و رمز عبور را وارد نمایید.';return}
  b.disabled=true;b.textContent='در حال ورود...';e.textContent='';
- try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'login',u,p})}),j=await r.json();
+ try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'login',u,p,dev:await devI(),ip:await getIp()})}),j=await r.json();
   if(!j.ok){e.textContent=j.error||'ورود انجام نشد.';return}
   AU={t:j.token,user:j.user};try{sessionStorage.setItem('fr_sess',JSON.stringify(AU))}catch(x){}
   closeLg();afterLogin()

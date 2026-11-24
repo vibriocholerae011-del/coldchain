@@ -1,5 +1,5 @@
 // نسخهٔ ذخیره‌سازی را با هر انتشار مهم افزایش دهید
-const CACHE = 'coldchain-v14';
+const CACHE = 'coldchain-v15';
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png'])).then(() => self.skipWaiting()));
 });

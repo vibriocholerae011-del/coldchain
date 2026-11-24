@@ -830,7 +830,7 @@ dial:'<circle cx="24" cy="24" r="17"/><path d="M24 24l8-8M24 11v3M11 24h3M37 24h
 const svg=k=>`<svg viewBox="0 0 48 48">${IC[k]}</svg>`;
 const CE=UT[1],PS=[UT[2],UT[3]],ZS='زنجیره سرد شهرستان',TY=[['chest','صندوقی (مدل دیگر)','chest'],['upright','ایستاده','up'],['freezer','فریزر (زیر 0)','fr'],['none','ندارد','no']];
 const FR=[['Haier HBC-80','f80','chest'],['Haier HBC-150','f150','chest'],['Haier HBC-260','f260','chest']],FRZ=[['Haier HBC-120','f120','upright'],['Haier HBC-240','f240','upright']];
-const PW=['فقط شبکه برق عمومی','شبکه برق عمومی و ژنراتور','شبکه برق عمومی و پنل خورشیدی','ژنراتور (بدون شبکه برق عمومی)','سایر'],GA='متصل به مدار و فعال',GS=[GA,'متصل به مدار، آماده به کار (خاموش)','غیرمتصل به مدار','خراب','در دست تعمیر'],GR=['خرابی ژنراتور','نبود سوخت','نبود سوئیچ خودکار (ATS) یا تابلوی برق','عدم راه‌اندازی پس از نصب','نیاز به سرویس یا تعمیر','عدم تخصیص اعتبار'];
+const PW=['فقط شبکه برق عمومی','شبکه برق عمومی و ژنراتور','شبکه برق عمومی و پنل خورشیدی','ژنراتور (بدون شبکه برق عمومی)','سایر'],GA='متصل به مدار و فعال',GS=[GA,'متصل به مدار و غیر فعال','غیرمتصل به مدار','خراب','در دست تعمیر'],GR=['خرابی ژنراتور','نبود سوخت','نبود سوئیچ خودکار (ATS) یا تابلوی برق','عدم راه‌اندازی پس از نصب','نیاز به سرویس یا تعمیر','عدم تخصیص اعتبار'];
 const RS=['سالم و فعال','فعال با مشکل','خراب','در دست تعمیر','غیرفعال'],RM=['ندارد','دماسنج ساده','دیتالاگر ثبت دما','سامانه پایش و هشدار'],CPK=['شکسته یا ترک‌خورده','درب معیوب','عایق آسیب‌دیده','سایر'],CPV=['بند یا دسته معیوب','فاقد فوم‌پد','شکسته یا ترک‌خورده','درب یا دریچه معیوب','عایق آسیب‌دیده','سایر'];
 const QK='کلدباکس (Cold box): ظرف عایق بزرگ‌تر (حداکثر وزن پر ۵۰ کیلوگرم) برای انتقال واکسن بین انبارها و مراکز و نگهداری موقت، همراه یخ‌پک. بر اساس استاندارد WHO (E004) ماندگاری سرما حداقل ۴۸ ساعت (برد کوتاه) یا ۹۶ ساعت (برد بلند) است.',QV='واکسن کریر (Vaccine carrier): ظرف عایق کوچک‌تر و قابل حمل با دست یا کوله (حداکثر وزن پر ۸ کیلوگرم) برای حمل مقدار کم واکسن در جلسات واکسیناسیون و فعالیت‌های سیار، همراه یخ‌پک؛ مدت ماندگاری سرمای آن کوتاه‌تر از کلدباکس است.';
 const UK=['c','k','ut','un','st','pc','pw','gn','gm','gp','gs','gr','cr','rn','rv','rs','ry','rb','rm','rd','cb','cbm','cbp','cbo','vc','vcm','vcp','vco','icp'];
@@ -867,11 +867,11 @@ const save_o=()=>{try{localStorage.setItem(SK(),JSON.stringify({rows:S.rows,sel:
 const cn=r=>TH.reduce((s,t)=>s+(r.tm[t[0]]||[]).length,0),tb=r=>TH.reduce((s,t)=>s+(r.tm[t[0]]||[]).filter(x=>x&&x!='سالم').length,0);
 const tmOK=r=>(r.nt||cn(r)>0)&&TH.every(t=>(r.tm[t[0]]||[]).every(x=>x))&&(!(r.tm.oth||[]).length||String(r.to).trim());
 const hasG=u=>u.ut==ZS?/ژنراتور/.test(u.pw||''):!!u.gn;
-const uok=u=>inList(u)&&u.cb!==''&&u.vc!==''&&u.icp!==''&&!(u.cbm>u.cb)&&!(u.vcm>u.vc)&&cpOK(u)&&(!PS.includes(u.ut)||String(u.pc||'').trim())&&(u.ut!=ZS||(u.pw&&(!hasG(u)||(u.gs&&(u.gs==GA||String(u.gr).trim())))&&(!u.cr||(u.rn>0&&u.rv>0&&u.rs))));
+const uok=u=>inList(u)&&u.cb!==''&&u.vc!==''&&u.icp!==''&&!(u.cbm>u.cb)&&!(u.vcm>u.vc)&&cpOK(u)&&(!PS.includes(u.ut)||String(u.pc||'').trim())&&(u.ut!=ZS||(u.pw&&(!hasG(u)||(u.gs&&(u.gs==GA||String(u.gr).trim())&&String(u.gm||'').trim()&&u.gp>0))&&(!u.cr||(u.rn>0&&u.rv>0&&u.rs))));
 const ok=r=>uok(r)&&r.c&&r.ut&&r.un&&r.st&&r.t&&(r.t=='none'?r.nq>0:(String(r.br).trim()&&String(r.m).trim()&&r.v>0&&tmOK(r)&&frOK(r)));
 const pic=k=>IMG[k]?`<img src="${IMG[k]}" alt="">`:svg(k);
 const nr=o=>({id:uid(),g:uid(),c:S.last.c,k:'m',ut:'',un:'',st:'',pc:S.last.pc||'',t:'',br:'',m:'',lb:'',nq:'',v:'',y:'',n:'',tm:{},nt:false,to:'',pw:'',gn:false,gm:'',gp:'',gs:'',gr:'',cr:false,rn:'',rv:'',rs:'',ry:'',rb:'',rm:'',rd:'',cb:'',cbm:'',cbp:[],cbo:'',vc:'',vcm:'',vcp:[],vco:'',icp:'',fs:'',...o});
-const fixR=r=>{r.pc=r.pc||'';
+const fixR=r=>{r.pc=r.pc||'';if(r.gs=='متصل به مدار، آماده به کار (خاموش)')r.gs='متصل به مدار و غیر فعال';
  if(r.ut==ZS){r.k='z';r.pc=''}
  else{const x=r.un?resU(r.c,r.ut,r.un):null;if(x){r.un=x.n;r.ut=x.t;r.pc=x.m;r.k='m'}else if(r.ut||r.k!='z')r.k='m'}
  if(r.t=='none'){r.n='';if(r.ut!=ZS)r.nq=1}};
@@ -910,7 +910,7 @@ function rEd0_o(){const a=groups().get(S.sel);if(!a)return;const u=a[0],zs=u.ut=
   $('#ed').innerHTML=`<div class=card><div class=grid><div><label>شهرستان</label>${sf('c',u.c,cosAllowed())}</div><div><label>نوع واحد</label>${KS}</div>${PCL}${UNF}<div><label>وضعیت واحد</label>${sf('st',u.st,['فعال','غیرفعال'])}</div></div></div>`
  +(!ready?'<div class=card>برای نمایش بخش‌های بعدی، ابتدا مشخصات واحد را از فهرست انتخاب نمایید.</div>':
  (zs?`<div class=card><b>منبع برق</b><div class=grid style="margin-top:6px">${F('pw','منبع برق',PW)}</div>${/ژنراتور/.test(u.pw)?gen(1):''}</div>
- <div class=card>${CK('cr','این شهرستان دارای اتاق سرد است')}${u.cr?`<div class="grid sub">${N('rn','تعداد اتاق سرد',1)}${N('rv','حجم کل (متر مکعب)',1)}${F('rs','وضعیت اتاق سرد',RS)}${N('ry','سال راه‌اندازی')}${F('rb','کمپرسور پشتیبان',['دارد','ندارد'],0)}${F('rm','سامانه پایش دما',RM,0)}${X('rd','توضیحات')}</div>`:''}</div>`:'')
+ <div class=card>${CK('cr','این شهرستان دارای اتاق سرد (cold room) است')}${u.cr?`<div class="grid sub">${N('rn','تعداد اتاق سرد',1)}${N('rv','حجم کل (متر مکعب)',1)}${F('rs','وضعیت اتاق سرد',RS)}${N('ry','سال راه‌اندازی')}${F('rb','کمپرسور پشتیبان',['دارد','ندارد'],0)}${F('rm','سامانه پایش دما',RM,0)}${X('rd','توضیحات')}</div>`:''}</div>`:'')
  +a.map(card).join('')+`<div class=row>${a[0].t!='none'?'<button class=btn onclick="addF()">+ افزودن یخچال دیگر به این واحد</button>':''}</div>
  <div class=card><b>کلدباکس و واکسن کریر</b><div class=grid style="margin-top:6px">${N('cb','تعداد کلدباکس '+Q(QK),1)}${N('cbm','تعداد کلدباکس معیوب')}</div><label>مشکلات کلدباکس</label>${CH('cbp',CPK)}
  <div class="grid sub">${N('vc','تعداد واکسن کریر '+Q(QV),1)}${N('vcm','تعداد واکسن کریر معیوب')}</div><label>مشکلات واکسن کریر</label>${CH('vcp',CPV)}</div>
@@ -1236,7 +1236,7 @@ function secOf(a){const u=a[0],zs=u.ut==ZS,ready=!!(u.c&&u.ut),S_={};
  let fF=0,fT=0,tF=0,tT=0;a.forEach(r=>{fT++;if(r.t)fF++;if(r.t=='none'){fT++;if(r.nq>0)fF++}else if(r.t){fT+=4;if(frOK(r))fF++;if(String(r.br).trim())fF++;if(String(r.m).trim())fF++;if(r.v>0)fF++;tT++;if(tmOK(r))tF++}});
  mk('sec-fridges',fF,fT||1);mk('sec-thermo',tF,tT,tT>0||a.every(r=>r.t=='none'));
  mk('sec-carriers',(u.cb!==''?1:0)+(u.vc!==''?1:0)+(u.icp!==''?1:0),3,cpOK(u)&&!(u.cbm>u.cb)&&!(u.vcm>u.vc));
- if(zs){let f=u.pw?1:0,t=1;if(hasG(u)){t+=2;if(u.gs)f++;if(u.gs&&(u.gs==GA||String(u.gr).trim()))f++}mk('sec-generator',f,t);
+ if(zs){let f=u.pw?1:0,t=1;if(hasG(u)){t+=4;if(u.gs)f++;if(u.gs&&(u.gs==GA||String(u.gr).trim()))f++;if(String(u.gm||'').trim())f++;if(u.gp>0)f++}mk('sec-generator',f,t);
   if(u.cr){mk('sec-coldroom',(u.rn>0?1:0)+(u.rv>0?1:0)+(u.rs?1:0),3)}else mk('sec-coldroom',0,0)}
  else mk('sec-generator',0,0);
  return S_}
@@ -1277,7 +1277,7 @@ function rEd0(){const a=groups().get(S.sel);if(!a)return;const u=a[0],zs=u.ut==Z
  CK=(k,l)=>`<label class=chk><input type=checkbox ${u[k]?'checked':''} onchange="setU('${k}',this.checked,this,1)"> ${l}</label>`,
  CH=(k,L)=>`<div class=chips>${L.map(x=>`<label><input type=checkbox ${u[k].includes(x)?'checked':''} onchange="tg('${k}','${x}')"> ${x}</label>`).join('')}</div>`,
  Q=t=>`<span class=q tabindex=0 data-t="${t}">؟</span>`,
- gen=r=>`<div class=gbox><div class=grid>${F('gs','وضعیت ژنراتور',GS,r)}${X('gm','برند و مدل ژنراتور')}${N('gp','توان ژنراتور (کیلووات‌آمپر)')}</div>${u.gs&&u.gs!=GA?`<div style="margin-top:14px">${X('gr','علت عدم اتصال یا عدم فعالیت ژنراتور',r,'gl')}</div>`:''}</div>`;
+ gen=r=>`<div class=gbox><div class=grid>${F('gs','وضعیت ژنراتور',GS,r)}${X('gm','برند و مدل ژنراتور',1)}${N('gp','توان ژنراتور (کیلووات‌آمپر)',1)}</div>${u.gs&&u.gs!=GA?`<div style="margin-top:14px">${X('gr','علت عدم اتصال یا عدم فعالیت ژنراتور',r,'gl')}</div>`:''}</div>`;
  const sl=(k,v,L,off)=>`<select ${off?'disabled':''} class="${off||(v&&L.includes(v))?'':'bad'}" onchange="setU('${k}',this.value,this)">${opts(L.includes(v)||!v?L:[v,...L],v,'انتخاب نمایید')}</select>`,
   KS=`<select class="${u.k?'':'bad'}" onchange="setU('k',this.value,this)"><option value="">انتخاب نمایید</option>${isReg()?'':`<option value="z" ${u.k=='z'?'selected':''}>${ZS}</option>`}<option value="m" ${u.k=='m'?'selected':''}>مراکز خدمات جامع سلامت</option></select>`,
   PCL=zs?`<div><label>مرکز خدمات جامع سلامت</label><input readonly disabled value=""></div>`:`<div><label>مرکز خدمات جامع سلامت</label>${sl('pc',u.pc,ctrsA(u.c),!u.c||u.k!='m')}</div>`,
@@ -1291,7 +1291,7 @@ function rEd0(){const a=groups().get(S.sel);if(!a)return;const u=a[0],zs=u.ut==Z
   const oth=(p,o,l)=>`<div id=o_${p} style="margin-top:12px;display:${(u[p]||[]).includes('سایر')?'block':'none'}"><label>توضیحات «سایر» مشکلات ${l} <i class=rq>(الزامی)</i></label><input class="${String(u[o]||'').trim()?'':'bad'}" value="${esc(u[o]||'')}" oninput="setU('${o}',this.value,this);carrUI()"></div>`;
   h+=secCard('sec-carriers',++n,'box','کلدباکس و واکسن کریر','تجهیزات حمل و نگهداری موقت واکسن',`<div class=grid>${N('cb','تعداد کلدباکس '+Q(QK),1)}${N('cbm','تعداد کلدباکس معیوب')}</div><div style="margin-top:14px"><label>مشکلات کلدباکس <i class=rq id=rq_cbp style="display:${u.cbm>0?'inline':'none'}">(الزامی؛ چون کلدباکس معیوب دارید)</i></label><div id=w_cbp class="${u.cbm>0&&!(u.cbp||[]).length?'bad':''}">${CH('cbp',CPK)}</div>${oth('cbp','cbo','کلدباکس')}</div><div class="grid sub">${N('vc','تعداد واکسن کریر '+Q(QV),1)}${N('vcm','تعداد واکسن کریر معیوب')}</div><div style="margin-top:14px"><label>مشکلات واکسن کریر <i class=rq id=rq_vcp style="display:${u.vcm>0?'inline':'none'}">(الزامی؛ چون واکسن کریر معیوب دارید)</i></label><div id=w_vcp class="${u.vcm>0&&!(u.vcp||[]).length?'bad':''}">${CH('vcp',CPV)}</div>${oth('vcp','vco','واکسن کریر')}</div><div class="grid sub">${N('icp','تعداد آیس‌پک موجود',1)}</div>`);
   if(zs){h+=secCard('sec-generator',++n,'bolt','منبع برق و ژنراتور','منابع تأمین برق در زمان قطعی',`<div class=grid>${F('pw','منبع برق',PW)}</div>${/ژنراتور/.test(u.pw)?`<div style="margin-top:14px">${gen(1)}</div>`:''}`);
-   h+=secCard('sec-coldroom',++n,'snow','مشخصات زنجیره سرد شهرستان و اتاق سرد','در صورت وجود اتاق سرد، مشخصات آن را کامل کنید',`${CK('cr','این شهرستان دارای اتاق سرد است')}${u.cr?`<div class="grid sub">${N('rn','تعداد اتاق سرد',1)}${N('rv','حجم کل (متر مکعب)',1)}${F('rs','وضعیت اتاق سرد',RS)}${N('ry','سال راه‌اندازی')}${F('rb','کمپرسور پشتیبان',['دارد','ندارد'],0)}${F('rm','سامانه پایش دما',RM,0)}${X('rd','توضیحات')}</div>`:''}`)}
+   h+=secCard('sec-coldroom',++n,'snow','مشخصات زنجیره سرد شهرستان و اتاق سرد','در صورت وجود اتاق سرد، مشخصات آن را کامل کنید',`${CK('cr','این شهرستان دارای اتاق سرد (cold room) است')}${u.cr?`<div class="grid sub">${N('rn','تعداد اتاق سرد',1)}${N('rv','حجم کل (متر مکعب)',1)}${F('rs','وضعیت اتاق سرد',RS)}${N('ry','سال راه‌اندازی')}${F('rb','کمپرسور پشتیبان',['دارد','ندارد'],0)}${F('rm','سامانه پایش دما',RM,0)}${X('rd','توضیحات')}</div>`:''}`)}
   else h+=secCard('sec-generator',++n,'bolt','ژنراتور و برق جایگزین','منبع برق پشتیبان واحد',`${CK('gn','علاوه بر شبکه برق عمومی، این واحد دارای ژنراتور یا منبع برق جایگزین است')}${u.gn?`<div style="margin-top:14px">${gen(0)}</div>`:''}`);
   h+=`<div class=row style="justify-content:flex-start"><button type=button class="btn g" onclick="addUnit()">${ic('next',17)}ثبت و ورود به واحد بعدی</button></div>`}
  $('#ed').innerHTML=h;
